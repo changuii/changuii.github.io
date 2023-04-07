@@ -1,0 +1,34 @@
+
+/* CSS 주석 사용하는 방법 */
+h1{
+    color:brown;
+}
+div{
+    box-sizing: border-box;
+    width:400px;
+    padding:5px;
+}
+
+div p{
+    color:aqua;
+}
+
+h2#origin{
+    color: yellow;
+}
+
+#original{
+    color:green;
+}
+
+p.pptag{
+    color:blue;
+}
+
+.ptag{
+    color: red;
+}
+
+*{
+    color : burlywood;
+}

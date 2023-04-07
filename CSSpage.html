@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="저는 가영입니다.">
+    <meta property="og:description" content="가영이에요">
+    <meta property="og:image" content="./cat.jpg">
+    <link rel="stylesheet" href="./style.css">
+    <title>CSS 테스트 페이지</title>
+</head>
+<body>
+    <h1>CSS 적용하기</h1>
+    <h2 id="origin">오직 h2에만 적용되는 ID</h2>
+    <p id="original">ID로 적용시키기</p>
+    <p class="pptag">오직 ptag에만 적용되는 태그</p>
+    <p class="ptag">ptag class 적용</p>
+    <div>BoxSize적용하기
+        <br>
+        <p>div의 자식에 있는 p에만 적용</p>
+    </div>
+    <ul>
+        <li>box-sizing:content-box는 요소 사이즈에 패딩과 테두리를 포함하지 않는다.</li>
+        <li>이 경우 width가 100, padding이 5라면 요소 사이즈에 100, 패딩이 5가 들어가서 총 110픽셀 + 나머지 테두리 크기</li>
+        <li>box-sizing:border-box는 요소 사이즈에 패딩과 테두리를 포함한다.</li>
+        <li>이 경우에는 테두리까지 100으로 잡기 때문에 내가 생각한 크기만큼 할당된다. </li>
+    </ul>
+</body>
+</html>
