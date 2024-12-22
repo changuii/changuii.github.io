@@ -1,11 +1,11 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
 const AboutMe: React.FC = () => {
+    const [isVisible, setIsVisible] = useState(false);
+
     useEffect(() => {
         const boxes = document.querySelectorAll(".box");
-
-        const observer = new IntersectionObserver(
-            (entries) => {
+        const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         // 화면 안으로 들어오면 요소를 나타나게 함
@@ -26,15 +26,20 @@ const AboutMe: React.FC = () => {
         );
 
         boxes.forEach((box) => observer.observe(box));
-
         // 클린업 함수로 observer 해제
         return () => {
             boxes.forEach((box) => observer.unobserve(box));
         };
     }, []);
 
+    useEffect(() => {
+        setTimeout(() => {
+            setIsVisible(true);
+        }, 100);
+    }, []);
+
     return (
-        <>
+        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <div
                 className={`box w-full bg-white transition-all duration-500 cursor-default mb-5`}>
                 <div className='flex h-full flex-col mt-36 justify-center items-center'>
@@ -82,7 +87,7 @@ const AboutMe: React.FC = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

@@ -1,8 +1,10 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 
 const Main: React.FC = () => {
     const [isHovered, setIsHovered] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+
     const navigate = useNavigate();
     const github : string = "https://github.com/changuii";
     const tistory : string = "https://g-db.tistory.com";
@@ -13,8 +15,14 @@ const Main: React.FC = () => {
         window.open(url);
     }
 
+    useEffect(() => {
+        setTimeout(() => {
+            setIsVisible(true);
+        }, 100);
+    }, []);
+
     return (
-        <>
+        <div className={`w-full h-full transition-all duration-[1500ms] ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <div className='flex h-full w-full text-3xl cursor-pointer'>
                 <div
                     onMouseEnter={() => setIsHovered(true)} // Hover 시작
@@ -69,7 +77,7 @@ const Main: React.FC = () => {
                 {/*    </div>*/}
                 {/*</div>*/}
             </div>
-        </>
+        </div>
     )
 }
 
