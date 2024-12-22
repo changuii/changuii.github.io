@@ -2,7 +2,6 @@ import {useState} from "react";
 
 const Main: React.FC = () => {
     const [isHovered, setIsHovered] = useState(false);
-    const aboutMe: string = 'About \n Me';
 
     return (
         <>
