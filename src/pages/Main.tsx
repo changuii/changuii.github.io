@@ -1,7 +1,17 @@
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 const Main: React.FC = () => {
     const [isHovered, setIsHovered] = useState(false);
+    const navigate = useNavigate();
+    const github : string = "https://github.com/changuii";
+    const tistory : string = "https://g-db.tistory.com";
+    const aboutme : string = "/aboutme";
+    const projects : string = "/projects";
+
+    const handleOpenUrl = (url : string) : void => {
+        window.open(url);
+    }
 
     return (
         <>
@@ -9,6 +19,7 @@ const Main: React.FC = () => {
                 <div
                     onMouseEnter={() => setIsHovered(true)} // Hover 시작
                     onMouseLeave={() => setIsHovered(false)} // Hover 종료
+                    onClick={() => navigate(aboutme)}
                     className="h-full w-2/12 blur-sm hover:blur-none hover:w-6/12 bg-white transition-all duration-500">
                     <div className='flex h-full flex-col justify-center'>
                         <div className='ml-5 font-bold '>About</div>
@@ -18,14 +29,16 @@ const Main: React.FC = () => {
                 <div
                     onMouseEnter={() => setIsHovered(true)} // Hover 시작
                     onMouseLeave={() => setIsHovered(false)} // Hover 종료
+                    onClick={() => navigate(projects)}
                     className="h-full w-2/12 blur-sm hover:blur-none hover:w-6/12 bg-black  transition-all duration-500">
                     <div className='flex h-full flex-col justify-center'>
-                        <div className='ml-5 font-bold text-white'>Project</div>
+                        <div className='ml-5 font-bold text-white'>Projects</div>
                     </div>
                 </div>
                 <div
                     onMouseEnter={() => setIsHovered(true)} // Hover 시작
                     onMouseLeave={() => setIsHovered(false)} // Hover 종료
+                    onClick={() => handleOpenUrl(tistory)}
                     className="h-full w-2/12 blur-sm hover:blur-none hover:w-6/12 bg-white transition-all duration-500">
                     <div className='flex h-full flex-col justify-center'>
                         <div className='ml-5  font-bold'>Tistory</div>
@@ -35,6 +48,7 @@ const Main: React.FC = () => {
                 <div
                     onMouseEnter={() => setIsHovered(true)} // Hover 시작
                     onMouseLeave={() => setIsHovered(false)} // Hover 종료
+                    onClick={() => handleOpenUrl(github)}
                     className="h-full w-2/12 blur-sm hover:blur-none hover:w-6/12 bg-black  transition-all duration-500">
                     <div className='flex h-full flex-col justify-center'>
                         <div className='ml-5 text-white font-bold'>Github</div>
