@@ -64,7 +64,7 @@ const AboutMe: React.FC = () => {
                         className="box opacity-0 w-96 h-96 mt-20 translate-y-4 transition duration-1000 bg-black rounded-2xl shadow-2xl ml-36">
                     </div>
                 </div>
-                <div className='w-0.5 bg-black shadow-2xl'>
+                <div className='w-0.5 bg-black opacity-20 shadow-2xl'>
                 </div>
                 <div className='w-1/2 mt-36 mb-44 flex flex-col h-max items-center'>
                     <div
