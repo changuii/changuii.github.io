@@ -1,16 +1,8 @@
 import './App.css'
-import {BrowserRouter as Router} from "react-router-dom";
-import AppRoutes from "./routes/Routes.tsx";
+import Layout from "./Layouts/Layout.tsx";
 
 function App() {
-
-  return (
-    <div className='h-screen w-screen'>
-        <Router>
-            <AppRoutes />
-        </Router>
-    </div>
-  )
+  return <Layout />
 }
 
 export default App
