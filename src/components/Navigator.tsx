@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 
 
 const Navigator: React.FC = () => {
-    const [isMain, setIsMain] = useState(true);
+    const [isMain, setIsMain] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
 
     const navigate = useNavigate();
@@ -20,6 +20,7 @@ const Navigator: React.FC = () => {
 
     useEffect(() => {
         const url = window.location.pathname;
+        console.log(url);
         if(url !== '/'){
             setIsMain(false)
         }
@@ -31,9 +32,9 @@ const Navigator: React.FC = () => {
 
 
     return (
-        <div className={`${isMain ? 'opacity-0' : 'opacity-100'} duration-1000 transition-all`}>
+        <>
             <div
-                className={`${isVisible ? '-bottom-full' : 'bottom-10'} duration-1000 transition-all fixed w-full h-[8%] z-10 `}>
+                className={`${isMain ? 'opacity-0' : 'opacity-100'} ${isVisible ? '-bottom-full' : 'bottom-10'} duration-1000 transition-all fixed w-full h-[8%] z-10 `}>
                 <div className='flex justify-end h-full items-center'>
                     <div
                         onClick={() => setIsVisible(true)}
@@ -83,7 +84,7 @@ const Navigator: React.FC = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 
