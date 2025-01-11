@@ -20,7 +20,7 @@ const MainCard : React.FC<{ props: MainCardProps }> = ({props}) => {
             onClick={() => handleNavigate(url)}
             className={`h-full w-2/12 blur-[3px] hover:blur-none hover:w-6/12 ${bgColor} transition-all duration-500`}>
             <div className='flex h-full flex-col justify-center whitespace-pre-wrap'>
-                <div className={`ml-5 font-bold ${textColor}`}>{title}</div>
+                <div className={`ml-5 font-bold text-2xl ${textColor}`}>{title}</div>
             </div>
         </div>
     )

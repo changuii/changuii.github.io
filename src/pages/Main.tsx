@@ -17,16 +17,19 @@ const Main: React.FC = () => {
 
     const mainCardProps : MainCardProps[] = [
         {
-            title : "About\nMe", setIsHovered : setIsHovered, handleNavigate : handleNavigate, url : "/aboutme", color : false
+            title : "ABOUT\nME", setIsHovered : setIsHovered, handleNavigate : handleNavigate, url : "/aboutme", color : true
         },
         {
-            title : "Projects", setIsHovered : setIsHovered, handleNavigate : handleNavigate, url : "/projects", color : true
+            title : "PROJECTS", setIsHovered : setIsHovered, handleNavigate : handleNavigate, url : "/projects", color : false
         },
         {
-            title : "Tistory\nBlog", setIsHovered : setIsHovered, handleNavigate : handleOpenUrl, url : "https://g-db.tistory.com", color : false
+            title : "TISTORY\nBLOG", setIsHovered : setIsHovered, handleNavigate : handleOpenUrl, url : "https://g-db.tistory.com", color : true
         },
         {
-            title : "Github", setIsHovered : setIsHovered, handleNavigate : handleOpenUrl, url : "https://github.com/changuii", color : true
+            title : "GITHUB", setIsHovered : setIsHovered, handleNavigate : handleOpenUrl, url : "https://github.com/changuii", color : false
+        },
+        {
+            title : "ALL\nCONTENTS", setIsHovered : setIsHovered, handleNavigate : handleNavigate, url : "/all", color : true
         }
     ]
 
@@ -48,8 +51,9 @@ const Main: React.FC = () => {
                 <div
                     className={`h-full w-6/12 bg-white transition-all duration-500 cursor-default ${isHovered ? 'blur-sm' : ''}`}>
                     <div className='flex flex-col mt-36 justify-start items-center'>
-                        <div className='rounded-full w-96 h-96 bg-black mb-10 shadow-2xl'></div>
-                        <div className='font-bold'>LEE-GHANGUI<sub className='text-xs font-normal text-gray-400'>이창의</sub></div>
+                        <div className='text-3xl text-black mb-5 font-extrabold whitespace-pre-wrap'>{'WELCOME TO CHANGUI WORLD'}</div>
+                        <div className='rounded-full w-96 h-96 bg-black mb-10 shadow-custom'></div>
+                        <div className='font-bold text-lg'>LEE-GHANGUI<sub className='text-xs font-normal text-gray-400'>이창의</sub></div>
                         <div className='text-xs m-0 text-gray-400'>Backend-Developer</div>
                     </div>
                 </div>
