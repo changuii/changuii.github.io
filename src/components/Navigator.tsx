@@ -5,8 +5,16 @@ import {useNavigate} from "react-router-dom";
 const Navigator: React.FC = () => {
     const [isMain, setIsMain] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
+    const [previewText, setPreviewText] = useState("다음 페이지를 선택해주세요.");
 
     const navigate = useNavigate();
+    const preViewTexts = {
+        "home": "메인 페이지로 이동합니다.",
+        "aboutme": "소개 페이지로 이동합니다.",
+        "projects" : "프로젝트 페이지로 이동합니다.",
+        "tistory" : "티스토리 블로그로 이동합니다.",
+        "github" : "깃허브로 이동합니다."
+    }
 
     const handleNavigate = (url: string) => {
         setIsVisible(false);
@@ -47,7 +55,7 @@ const Navigator: React.FC = () => {
             </div>
 
             <div
-                className={`${isVisible ? 'opacity-100 right-1/2' : 'opacity-0 z-[-1] right-10'} h-[50%] bg-black shadow-2xl rounded-2xl bottom-20 transition-all duration-1000 fixed min-w-72 z-20`}>
+                className={`${isVisible ? 'opacity-100 right-1/3' : 'opacity-0 z-[-1] right-10'} h-[50%] bg-black shadow-2xl rounded-2xl bottom-20 transition-all duration-1000 fixed min-w-72 z-20`}>
                 <div className='flex relative justify-end h-full items-center'>
                     <div className='absolute w-full h-full'>
                         <div className='w-full flex flex-col items-start justify-center p-9 gap-10 max-h-full'>
@@ -55,30 +63,48 @@ const Navigator: React.FC = () => {
                             <div className='flex flex-col justify-between items-start gap-8'>
                                 <div
                                     onClick={() => handleNavigate('/')}
-                                    className='cursor-pointer text-white text-xl font-bold hover:text-3xl underline-offset-2 underline transition-all duration-1000'>
+                                    onMouseEnter={() => setPreviewText(preViewTexts.home)}
+                                    className='cursor-pointer hover:text-red-500 text-white text-xl font-bold w-full underline-offset-2 underline transition-all duration-1000'>
                                     HOME
                                 </div>
                                 <div
                                     onClick={() => handleNavigate('/aboutme')}
-                                    className='cursor-pointer text-white text-xl font-bold hover:text-3xl underline-offset-2 underline transition-all duration-1000'>
+                                    onMouseEnter={() => setPreviewText(preViewTexts.aboutme)}
+                                    className='cursor-pointer hover:text-red-500 text-white text-xl font-bold w-full underline-offset-2 underline transition-all duration-1000'>
                                     ABOUT ME
                                 </div>
                                 <div
                                     onClick={() => handleNavigate('/projects')}
-                                    className='cursor-pointer text-white text-xl font-bold hover:text-3xl underline-offset-2 underline transition-all duration-1000'>
+                                    onMouseEnter={() => setPreviewText(preViewTexts.projects)}
+                                    className='cursor-pointer hover:text-red-500 text-white text-xl font-bold w-full underline-offset-2 underline transition-all duration-1000'>
                                     PROJECTS
                                 </div>
                                 <div
                                     onClick={() => handleOpenUrl('https://g-db.tistory.com')}
-                                    className='cursor-pointer text-white text-xl font-bold hover:text-3xl underline-offset-2 underline transition-all duration-1000'>
+                                    onMouseEnter={() => setPreviewText(preViewTexts.tistory)}
+                                    className='cursor-pointer hover:text-red-500 text-white text-xl font-bold w-full underline-offset-2 underline transition-all duration-1000'>
                                     TISTORY
                                     BLOG
                                 </div>
                                 <div
                                     onClick={() => handleOpenUrl('https://github.com/changuii')}
-                                    className='cursor-pointer text-white text-xl font-bold hover:text-3xl underline-offset-2 underline transition-all duration-1000'>
+                                    onMouseEnter={() => setPreviewText(preViewTexts.github)}
+                                    className='cursor-pointer hover:text-red-500 text-white text-xl font-bold w-full underline-offset-2 underline transition-all duration-1000'>
                                     GITHUB
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                className={`${isVisible ? 'opacity-90 left-1/4 z-20' : 'left-10 z-[-1] opacity-0'} top-10 rounded-2xl transition-all duration-1000 bg-white fixed w-72 h-[50%]`}>
+                <div className='flex relative justify-end h-full items-center'>
+                    <div className='absolute w-full h-full'>
+                        <div className='w-full flex flex-col items-start justify-center p-7 gap-10 max-h-full'>
+                            <div className='text-black text-4xl font-bold'>Next Preview</div>
+                            <div className='flex flex-col justify-between items-start gap-8'>
+                                <div className='font-bold text-2xl'>{previewText}</div>
                             </div>
                         </div>
                     </div>
