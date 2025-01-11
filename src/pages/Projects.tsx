@@ -39,7 +39,7 @@ const Projects: React.FC = () => {
                 <div></div>
                 <div
                     className={`box w-full bg-white transition-all duration-500 cursor-default mb-5`}>
-                    <div className='flex h-full flex-col mt-36 justify-center items-center'>
+                    <div className='flex h-full flex-col pt-36 justify-center items-center'>
                         <div className='rounded-full w-96 h-96 bg-black mb-10 shadow-2xl'></div>
                         <div className='font-bold text-5xl text-black'>Projects</div>
                         <div className='w-0.5 h-96 mt-5 bg-black'></div>
