@@ -4,12 +4,10 @@ import Navigator from "../components/Navigator.tsx";
 
 const Layout: React.FC = () => {
     return (
-        <div className='h-screen w-screen'>
-            <Router>
-                <Navigator />
-                <AppRoutes/>
-            </Router>
-        </div>
+        <Router>
+            <Navigator/>
+            <AppRoutes/>
+        </Router>
     )
 }
 
